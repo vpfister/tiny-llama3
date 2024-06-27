@@ -1,22 +1,23 @@
+import logging
 import os
 import sys
-import yaml
-import logging
+
 import click
+import yaml
 
 import tiny_llama3
 from tiny_llama3.app import App
 
 if sys.stdout.isatty():
-# You're running in a real terminal
-    LOG_FORMAT="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    # You're running in a real terminal
+    LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 else:
-    LOG_FORMAT="%(name)s - %(levelname)s - %(message)s"
+    LOG_FORMAT = "%(name)s - %(levelname)s - %(message)s"
 
 logging.basicConfig(
     level=getattr(logging, os.getenv("LOGLEVEL", "INFO").upper()),
     format=LOG_FORMAT,
-    datefmt="%Y-%m-%dT%H:%M:%S"
+    datefmt="%Y-%m-%dT%H:%M:%S",
 )
 
 logger = logging.getLogger("tiny_llama3")
@@ -24,10 +25,12 @@ logger = logging.getLogger("tiny_llama3")
 # set levels for other modules
 logging.getLogger("urllib3").setLevel(logging.WARNING)
 
+
 @click.group()
 @click.version_option(package_name="tiny-llama3")
 def cli():
     pass
+
 
 @cli.command()
 @click.option("-v", "--verbose", count=True)
@@ -48,7 +51,7 @@ def version(verbose):
 )
 def serve(config_file):
     """Start tiny-llama3 in server mode"""
-    
+
     settings = {}
     if config_file:
         try:
