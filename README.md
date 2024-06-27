@@ -1,8 +1,9 @@
 # tiny-llama3
 
 
-
 tiny llama3-like built from scratch
+
+see [naklecha/llama3-from-scratch](https://github.com/naklecha/llama3-from-scratch) on github.
 
 ## Developing
 

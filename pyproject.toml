@@ -12,7 +12,7 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/vpfister/tiny-llama3"
 repository = "https://github.com/vpfister/tiny-llama3"
-documentation = "README.md"
+documentation = "https://github.com/vpfister/tiny-llama3/README.md"
 classifiers = [
     # https://pypi.org/classifiers/
     "Environment :: Console",
@@ -33,6 +33,12 @@ jupyterlab = "*"
 pandas = "*"
 jupyterlab_git = "*"
 jupyterlab_widgets = "*"
+tiktoken = "^0.7.0"
+torch = "^2.3.1"
+numpy = "^2.0.0"
+matplotlib = "^3.9.0"
+tables = "^3.9.2"
+blobfile = "^2.1.1"
 
 [tool.poetry.group.test.dependencies]
 bandit = "*"
@@ -66,11 +72,6 @@ profile = "black"
 
 [tool.black]
 target-version = ['py311']
-strict = true
-warn_unreachable = true
-pretty = true
-show_column_numbers = true
-show_error_context = true
 
 [tool.ruff]
 select = ["ALL"]
