@@ -52,6 +52,8 @@ wandb = "^0.17.3"
 python-dotenv = "^1.0.1"
 scikit-learn = "^1.5.0"
 cython = "^3.0.10"
+h5py = "^3.11.0"
+jupyter-contrib-nbextensions = "^0.7.0"
 
 [tool.poetry.group.test.dependencies]
 bandit = "*"
@@ -79,6 +81,13 @@ myst_parser = "*"
 sphinx = "*"
 sphinx-autobuild = "*"
 sphinx-click = "*"
+
+
+[tool.poetry.group.dev.dependencies]
+ipytest = "^0.14.2"
+catppuccin-jupyterlab = "^0.2.2"
+jupyterlab-lsp = "^5.1.0"
+python-lsp-server = {extras = ["all"], version = "^1.11.0"}
 
 [tool.isort]
 profile = "black"
